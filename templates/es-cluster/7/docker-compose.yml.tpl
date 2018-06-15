@@ -161,10 +161,16 @@ services:
 volumes:
   es-master-volume:
     driver: ${VOLUME_DRIVER}
+    driver_opts:
+      {{.Values.VOLUME_DRIVER_OPTS}}
     per_container: true
   es-data-volume:
     driver: ${VOLUME_DRIVER}
+    driver_opts:
+      {{.Values.VOLUME_DRIVER_OPTS}}
     per_container: true
   es-client-volume:
     driver: ${VOLUME_DRIVER}
+    driver_opts:
+      {{.Values.VOLUME_DRIVER_OPTS}}
     per_container: true
